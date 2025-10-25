@@ -380,7 +380,7 @@ const Work = () => {
                 {workItems.map((item) => (
                   <a
                     key={`first-${item.id}`}
-                    href={`/illustrations/${item.slug}`}
+                     
                     className="collection-item"
                     style={{ 
                       width: 'clamp(280px, 30vw, 400px)',
@@ -414,7 +414,7 @@ const Work = () => {
                 {workItems.map((item) => (
                   <a
                     key={`duplicate-${item.id}`}
-                    href={`/illustrations/${item.slug}`}
+                   
                     className="collection-item"
                     style={{ 
                       width: 'clamp(280px, 30vw, 400px)',
@@ -461,7 +461,7 @@ const Work = () => {
                     style={{ minWidth: '240px', width: '240px' }}
                   >
                     <a
-                      href={`/illustrations/${item.slug}`}
+                      
                       className="block"
                       aria-label={`View ${item.title} project`}
                       tabIndex="0"
@@ -497,7 +497,7 @@ const Work = () => {
                     style={{ minWidth: '240px', width: '240px' }}
                   >
                     <a
-                      href={`/illustrations/${item.slug}`}
+                       
                       className="block"
                       tabIndex="-1"
                     >
