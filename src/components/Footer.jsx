@@ -36,7 +36,7 @@ const Footer = () => {
   const navigationLinks = {
     column1: [
       { text: 'Home', url: '/', current: true },
-      { text: 'WORK', url: '/work', current: false },
+      { text: 'WORK', url: '/portfolio', current: false },
       { text: 'Portfolio', url: '/illustrations', current: false }
     ],
     column2: [
