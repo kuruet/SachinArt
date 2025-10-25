@@ -1,31 +1,6 @@
 import { useState, useEffect } from 'react';
 import logo from '../assets/loggo.png';
 
-/**
- * Header Component - Sticky Navigation with Mobile Menu
- * 
- * CUSTOMIZATION:
- * - Logo: Replace "LOGO" text with your brand name or image
- * - Navigation links: Update leftNavLinks and rightNavLinks arrays
- * - Colors: Modify CSS variables in the style block below
- * - Active page: Set current: true for the active link
- * 
- * FEATURES:
- * - Sticky header that stays at top on scroll
- * - Responsive hamburger menu for mobile
- * - Smooth hover animations on links
- * - Keyboard accessible
- * - Click outside to close mobile menu
- * 
- * TAILWIND CONFIG (optional - add to tailwind.config.js):
- * colors: {
- *   cream: '#fff5df',
- *   gold: '#8a733e',
- *   tan: '#b7a26e',
- *   oldLace: '#fff8e7',
- * }
- */
-
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -154,6 +129,25 @@ const Header = () => {
           background-color: var(--gold);
           opacity: 0.3;
         }
+
+        /* Responsive Font Sizes */
+        @media (max-width: 1024px) {
+          .nav-link {
+            font-size: 16px;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .nav-link {
+            font-size: 20px;
+          }
+        }
+
+        @media (min-width: 1280px) {
+          .nav-link {
+            font-size: 18px;
+          }
+        }
       `}</style>
 
       {/* Header */}
@@ -168,17 +162,17 @@ const Header = () => {
           lineHeight: '20px'
         }}
       >
-        <nav className="max-w-7xl mx-auto px-6 py-4 border-b-2 border-[#8a7332]">
+        <nav className="max-w-7xl mx-auto px-3 sm:px-4 md:px-6 py-3 md:py-4 border-b-2 border-[#8a7332]">
           <div className="flex items-center justify-between">
             {/* Left Navigation - Desktop */}
-            <div className="hidden md:flex items-center space-x-6">
+            <div className="hidden lg:flex items-center space-x-3 xl:space-x-6">
               {leftNavLinks.map((link, index) => (
                 <div key={link.text} className="flex items-center">
                   <a
                     href={link.url}
                     aria-label={link.text}
                     aria-current={link.current ? 'page' : undefined}
-                    className={`nav-link text-lg font-medium tracking-wide ${
+                    className={`nav-link text-base lg:text-lg font-medium tracking-wide ${
                       link.current ? '' : ''
                     }`}
                     style={{ color: 'var(--gold)' }}
@@ -186,7 +180,7 @@ const Header = () => {
                     {link.text}
                   </a>
                   {index < leftNavLinks.length - 1 && (
-                    <div className="divider ml-6" aria-hidden="true"></div>
+                    <div className="divider ml-3 xl:ml-6" aria-hidden="true"></div>
                   )}
                 </div>
               ))}
@@ -196,24 +190,28 @@ const Header = () => {
             <a
               href="/"
               aria-label="Home"
-              className="text-2xl font-bold "
+              className="text-2xl font-bold flex-shrink-0"
               style={{ color: 'var(--gold)' }}
             >
-              <img src={logo} alt="Logo" className="h-10 md:h-16 object-contain" />
+              <img 
+                src={logo} 
+                alt="Logo" 
+                className="h-8 sm:h-10 md:h-12 lg:h-14 xl:h-16 object-contain" 
+              />
             </a>
 
             {/* Right Navigation - Desktop */}
-            <div className="hidden md:flex items-center space-x-6">
+            <div className="hidden lg:flex items-center space-x-3 xl:space-x-6">
               {rightNavLinks.map((link, index) => (
                 <div key={link.text} className="flex items-center">
                   {index > 0 && (
-                    <div className="divider mr-6" aria-hidden="true"></div>
+                    <div className="divider mr-3 xl:mr-6" aria-hidden="true"></div>
                   )}
                   <a
                     href={link.url}
                     aria-label={link.text}
                     aria-current={link.current ? 'page' : undefined}
-                    className={`nav-link text-lg font-medium tracking-wide ${
+                    className={`nav-link text-base lg:text-lg font-medium tracking-wide ${
                       link.current ? '' : ''
                     }`}
                     style={{ color: 'var(--gold)' }}
@@ -224,27 +222,27 @@ const Header = () => {
               ))}
             </div>
 
-            {/* Hamburger Menu Button - Mobile */}
+            {/* Hamburger Menu Button - Mobile/Tablet */}
             <button
               onClick={toggleMobileMenu}
               aria-label="Toggle navigation menu"
               aria-controls="mobile-menu"
               aria-expanded={isMobileMenuOpen}
-              className={`hamburger-button md:hidden flex flex-col justify-center items-center w-10 h-10 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
+              className={`hamburger-button lg:hidden flex flex-col justify-center items-center w-8 h-8 sm:w-10 sm:h-10 focus:outline-none focus:ring-2 focus:ring-offset-2 ${
                 isMobileMenuOpen ? 'hamburger-open' : ''
               }`}
               style={{ focusRingColor: 'var(--gold)' }}
             >
               <span
-                className="hamburger-line w-6 h-0.5 mb-1.5"
+                className="hamburger-line w-5 sm:w-6 h-0.5 mb-1 sm:mb-1.5"
                 style={{ backgroundColor: 'var(--gold)' }}
               ></span>
               <span
-                className="hamburger-line w-6 h-0.5 mb-1.5"
+                className="hamburger-line w-5 sm:w-6 h-0.5 mb-1 sm:mb-1.5"
                 style={{ backgroundColor: 'var(--gold)' }}
               ></span>
               <span
-                className="hamburger-line w-6 h-0.5"
+                className="hamburger-line w-5 sm:w-6 h-0.5"
                 style={{ backgroundColor: 'var(--gold)' }}
               ></span>
             </button>
@@ -255,14 +253,14 @@ const Header = () => {
       {/* Mobile Menu Overlay */}
       <div
         id="mobile-menu"
-        className={`mobile-menu fixed inset-0 z-40 md:hidden transition-all duration-400 ease-in-out ${
+        className={`mobile-menu fixed inset-0 z-40 lg:hidden transition-all duration-400 ease-in-out ${
           isMobileMenuOpen
             ? 'opacity-100 pointer-events-auto'
             : 'opacity-0 pointer-events-none'
         }`}
         style={{ backgroundColor: 'var(--cream)' }}
       >
-        <div className="flex flex-col items-center justify-center h-full space-y-8 px-6">
+        <div className="flex flex-col items-center justify-center h-full space-y-6 sm:space-y-8 px-6">
           {/* All Links Vertically */}
           {[...leftNavLinks, ...rightNavLinks].map((link) => (
             <a
@@ -271,7 +269,7 @@ const Header = () => {
               onClick={closeMobileMenu}
               aria-label={link.text}
               aria-current={link.current ? 'page' : undefined}
-              className={`nav-link text-2xl font-medium tracking-wide ${
+              className={`nav-link text-xl sm:text-2xl font-medium tracking-wide ${
                 link.current ? 'active' : ''
               }`}
               style={{ color: 'var(--gold)' }}
@@ -283,7 +281,7 @@ const Header = () => {
       </div>
 
       {/* Spacer to prevent content from going under fixed header */}
-      <div className="h-16"></div>
+      <div className="h-14 sm:h-16 md:h-18 lg:h-20 xl:h-24"></div>
     </>
   );
 };

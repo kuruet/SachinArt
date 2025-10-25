@@ -16,17 +16,7 @@ import client12 from '../assets/client12.jpg';
 
 /**
  * Work Component - Fixed Seamless Infinite Marquee
- * 
- * FIXES:
- * - Smooth infinite loop with no jumps or gaps
- * - Dynamic animation duration based on content width
- * - Responsive on all devices (mobile, tablet, desktop)
- * - Hardware-accelerated animations
- * 
- * FEATURES:
- * - Seamless infinite right-to-left scroll
- * - Respects prefers-reduced-motion
- * - Accessible with proper ARIA labels
+ * Fully Responsive for All Devices
  */
 
 const Work = () => {
@@ -104,6 +94,14 @@ const Work = () => {
     <>
       {/* Dynamic CSS with measured widths */}
       <style>{`
+        @font-face {
+          font-family: 'Morion';
+          src: url('https://cdn.jsdelivr.net/gh/projectwallace/morion@main/morion.woff2') format('woff2');
+          font-weight: 700;
+          font-style: normal;
+          font-display: swap;
+        }
+
         :root {
           --cream: #fff5df;
           --gold: #8a733e;
@@ -118,6 +116,13 @@ const Work = () => {
           line-height: 44px;
           box-sizing: border-box;
           background-color: var(--cream);
+        }
+
+        .morion-heading {
+          font-family: 'Morion', 'Times New Roman', serif;
+          font-weight: 700;
+          text-transform: uppercase;
+          letter-spacing: 0.05em;
         }
 
         /* Dynamic Marquee Animations */
@@ -270,13 +275,6 @@ const Work = () => {
           transform: scaleX(1);
         }
 
-        .header-line {
-          width: 80px;
-          height: 2px;
-          background-color: var(--gold);
-          margin: 16px auto 32px;
-        }
-
         .carousel-line-mobile {
           width: 40px;
           height: 2px;
@@ -296,62 +294,82 @@ const Work = () => {
           white-space: nowrap;
           border-width: 0;
         }
+
+        /* Responsive Heading Styles */
+        @media (max-width: 640px) {
+          .morion-heading {
+            font-size: 28px !important;
+            line-height: 34px !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            padding: 0 1rem;
+            height: auto !important;
+            margin-top: 20px !important;
+            margin-bottom: 20px !important;
+          }
+        }
+
+        @media (min-width: 641px) and (max-width: 768px) {
+          .morion-heading {
+            font-size: 36px !important;
+            line-height: 42px !important;
+            width: 100% !important;
+            max-width: 100% !important;
+            padding: 0 1.5rem;
+            height: auto !important;
+            margin-top: 25px !important;
+            margin-bottom: 25px !important;
+          }
+        }
+
+        @media (min-width: 769px) and (max-width: 1024px) {
+          .morion-heading {
+            font-size: 48px !important;
+            line-height: 56px !important;
+            width: 100% !important;
+            max-width: 800px !important;
+            height: auto !important;
+            margin-top: 30px !important;
+            margin-bottom: 30px !important;
+          }
+        }
+
+        @media (min-width: 1025px) {
+          .morion-heading {
+            font-size: 60px !important;
+            line-height: 70px !important;
+            width: 900px !important;
+            max-width: 900px !important;
+            height: 50px !important;
+            margin-top: 40px !important;
+            margin-bottom: 40px !important;
+          }
+        }
       `}</style>
 
       {/* Main Section */}
-      <section className="my-work-section w-full py-16 md:py-24" aria-label="Work showcase">
-        <div className="container-5 w-container max-w-7xl mx-auto px-6">
+      <section className="my-work-section w-full py-8 sm:py-12 md:py-16 lg:py-24" aria-label="Work showcase">
+        <div className="container-5 w-container max-w-7xl mx-auto px-3 sm:px-4 md:px-6">
           
           {/* Section Heading */}
-          <div className="flex flex-col items-center mb-12">
-
-<style>{`
-        @font-face {
-          font-family: 'Morion';
-          src: url('https://cdn.jsdelivr.net/gh/projectwallace/morion@main/morion.woff2') format('woff2');
-          font-weight: 700;
-          font-style: normal;
-          font-display: swap;
-        }
-
-        :root {
-          --gold: #8B7355;
-        }
-
-        .morion-heading {
-          font-family: 'Morion', 'Times New Roman', serif;
-          font-weight: 700;
-          text-transform: uppercase;
-          letter-spacing: 0.05em;
-        }
-      `}</style>
-
-      <h1
-        className="morion-heading flex justify-center items-center text-center whitespace-normal mx-auto"
-        style={{
-          color: 'var(--gold)',
-          letterSpacing: '2px',
-          width: '900px',
-          maxWidth: '900px',
-          height: '50px',
-          marginTop: '40px',
-          marginBottom: '40px',
-          fontSize: '60px',
-          fontStyle: 'normal',
-          fontWeight: 700,
-          lineHeight: '70px',
-          textDecoration: 'none'
-        }}
-      >
-        OUR HAPPY CLIENTS
-      </h1>
-
-            {/* <div className="header-line" aria-hidden="true"></div> */}
+          <div className="flex flex-col items-center mb-8 sm:mb-10 md:mb-12">
+            <h1
+              className="morion-heading flex justify-center items-center text-center whitespace-normal mx-auto"
+              style={{
+                color: 'var(--gold)',
+                letterSpacing: '2px',
+                fontStyle: 'normal',
+                fontWeight: 700,
+                textDecoration: 'none'
+              }}
+            >
+              OUR HAPPY CLIENTS
+            </h1>
           </div>
 
           {/* Desktop/Tablet: Seamless Marquee - Full Width */}
           <div 
-            className="hidden md:block panning-work mb-12"
+            className="hidden sm:block panning-work mb-8 sm:mb-10 md:mb-12"
             role="region"
             aria-labelledby="work-heading"
             aria-live={prefersReducedMotion ? "polite" : "off"}
@@ -365,9 +383,9 @@ const Work = () => {
                     href={`/illustrations/${item.slug}`}
                     className="collection-item"
                     style={{ 
-                      width: '400px',
-                      minWidth: '400px',
-                      height: '500px'
+                      width: 'clamp(280px, 30vw, 400px)',
+                      minWidth: 'clamp(280px, 30vw, 400px)',
+                      height: 'clamp(350px, 40vw, 500px)'
                     }}
                     aria-label={`View ${item.title} project`}
                     tabIndex="0"
@@ -380,10 +398,10 @@ const Work = () => {
                     </div>
 
                     <div className="work-item-overlay">
-                      <h3 className="text-white text-2xl lg:text-3xl font-bold mb-4 text-center px-4">
+                      <h3 className="text-white text-xl sm:text-2xl lg:text-3xl font-bold mb-2 sm:mb-4 text-center px-4">
                         {item.title}
                       </h3>
-                      <span className="learn-more text-white text-sm uppercase tracking-widest font-medium">
+                      <span className="learn-more text-white text-xs sm:text-sm uppercase tracking-widest font-medium">
                         {/* Learn More */}
                       </span>
                     </div>
@@ -399,9 +417,9 @@ const Work = () => {
                     href={`/illustrations/${item.slug}`}
                     className="collection-item"
                     style={{ 
-                      width: '400px',
-                      minWidth: '400px',
-                      height: '500px'
+                      width: 'clamp(280px, 30vw, 400px)',
+                      minWidth: 'clamp(280px, 30vw, 400px)',
+                      height: 'clamp(350px, 40vw, 500px)'
                     }}
                     tabIndex="-1"
                   >
@@ -413,10 +431,10 @@ const Work = () => {
                     </div>
 
                     <div className="work-item-overlay">
-                      <h3 className="text-white text-2xl lg:text-3xl font-bold mb-4 text-center px-4">
+                      <h3 className="text-white text-xl sm:text-2xl lg:text-3xl font-bold mb-2 sm:mb-4 text-center px-4">
                         {item.title}
                       </h3>
-                      <span className="learn-more text-white text-sm uppercase tracking-widest font-medium">
+                      <span className="learn-more text-white text-xs sm:text-sm uppercase tracking-widest font-medium">
                         Learn More
                       </span>
                     </div>
@@ -428,7 +446,7 @@ const Work = () => {
 
           {/* Mobile: Full Width Marquee */}
           <div 
-            className="md:hidden panning-work-mobile mb-12"
+            className="sm:hidden panning-work-mobile mb-8"
             role="region"
             aria-labelledby="work-heading"
             aria-live={prefersReducedMotion ? "polite" : "off"}
@@ -440,7 +458,7 @@ const Work = () => {
                   <div 
                     key={`mobile-first-${item.id}`} 
                     className="flex-shrink-0" 
-                    style={{ minWidth: '280px', width: '280px' }}
+                    style={{ minWidth: '240px', width: '240px' }}
                   >
                     <a
                       href={`/illustrations/${item.slug}`}
@@ -448,7 +466,7 @@ const Work = () => {
                       aria-label={`View ${item.title} project`}
                       tabIndex="0"
                     >
-                      <div className="relative rounded-xl overflow-hidden shadow-lg mb-4" style={{ height: '400px' }}>
+                      <div className="relative rounded-xl overflow-hidden shadow-lg mb-3" style={{ height: '320px' }}>
                         <div
                           className="work-item-image"
                           style={{ backgroundImage: `url(${item.image})` }}
@@ -459,10 +477,10 @@ const Work = () => {
                       </div>
 
                       <div className="mobile-work-title-home text-center">
-                        <h3 className="text-xl font-bold mb-2" style={{ color: 'var(--gold)' }}>
+                        <h3 className="text-lg font-bold mb-2" style={{ color: 'var(--gold)' }}>
                           {item.title}
                         </h3>
-                        <p className="text-sm text-gray-600 mb-2">{item.category}</p>
+                        <p className="text-xs text-gray-600 mb-2">{item.category}</p>
                         <div className="carousel-line-mobile"></div>
                       </div>
                     </a>
@@ -476,14 +494,14 @@ const Work = () => {
                   <div 
                     key={`mobile-duplicate-${item.id}`} 
                     className="flex-shrink-0" 
-                    style={{ minWidth: '280px', width: '280px' }}
+                    style={{ minWidth: '240px', width: '240px' }}
                   >
                     <a
                       href={`/illustrations/${item.slug}`}
                       className="block"
                       tabIndex="-1"
                     >
-                      <div className="relative rounded-xl overflow-hidden shadow-lg mb-4" style={{ height: '400px' }}>
+                      <div className="relative rounded-xl overflow-hidden shadow-lg mb-3" style={{ height: '320px' }}>
                         <div
                           className="work-item-image"
                           style={{ backgroundImage: `url(${item.image})` }}
@@ -494,10 +512,10 @@ const Work = () => {
                       </div>
 
                       <div className="mobile-work-title-home text-center">
-                        <h3 className="text-xl font-bold mb-2" style={{ color: 'var(--gold)' }}>
+                        <h3 className="text-lg font-bold mb-2" style={{ color: 'var(--gold)' }}>
                           {item.title}
                         </h3>
-                        <p className="text-sm text-gray-600 mb-2">{item.category}</p>
+                        <p className="text-xs text-gray-600 mb-2">{item.category}</p>
                         <div className="carousel-line-mobile"></div>
                       </div>
                     </a>
