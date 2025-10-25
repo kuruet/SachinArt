@@ -10,12 +10,7 @@ const Portfolio = ()=> {
   {/* Header */}
   <Header className="">Header</Header>
 
-  Main content
-  <main  >
-    <MovingImages />
-   
-  </main>
-
+ <MovingImages />
   {/* Footer */}
   <Footer className=" text-white p-4 w-full fixed bottom-0 left-0">
     Footer content
