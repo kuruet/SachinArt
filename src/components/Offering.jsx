@@ -114,21 +114,29 @@ const Service = () => {
 
       {/* Main Service Section */}
       <section
-        className="service-root w-full py-16 md:py-6 md:mb-24"
-        style={{ backgroundColor: 'var(--cream)', marginTop: '100px' }}
+        className="service-root w-full py-16 md:py-2 sm:py-2 sm:mt-2 md:mb-24"
+        style={{ backgroundColor: 'var(--cream)' }}
         role="region"
         aria-labelledby="services-heading"
       >
         <div className="services-container mx-auto max-w-[900px] px-4 sm:px-6">
           
           {/* Section Heading */}
-          <h1
-            id="services-heading"
-            className="services-section-heading text-3xl md:text-4xl lg:text-5xl font-bold text-center uppercase tracking-wider mb-8 md:mb-12"
-            style={{ color: 'var(--gold)' }}
-          >
-            SERVICES
-          </h1>
+         <h1
+  id="services-heading"
+  className="
+    services-section-heading
+    text-3xl md:text-4xl lg:text-5xl 
+    font-bold 
+    text-center uppercase tracking-wider
+    mt-1 sm:mt-1 md:mt-20 lg:mt-12
+    mb-4 sm:mb-4 md:mb-12 lg:mb-14
+  "
+  style={{ color: 'var(--gold)' }}
+>
+  SERVICES
+</h1>
+
 
           {/* Header Divider */}
           <div className="mb-12 md:mb-16">

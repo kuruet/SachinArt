@@ -67,8 +67,8 @@ const Work = () => {
             letterSpacing: '2px',
             marginTop: '50px',
             marginBottom: '40px',
-            fontSize: '60px',
-            fontWeight: 700,
+            fontSize: '50px',
+            fontWeight: 800,
             lineHeight: '70px',
           }}
         >
