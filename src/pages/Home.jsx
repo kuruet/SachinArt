@@ -17,14 +17,15 @@ const Home = ()=> {
       
       <Header />
       <HeroSection />
-      <ClientLoop />
+      {/* <ClientLoop /> */}
       <Divider />
        <About />
       <Divider />
       <Work />
       <Divider />
-      <Testimonial />
+       <ClientLoop />
       <Divider />
+      <Testimonial />
       <Contact />
        <Follow />
       <Footer />
