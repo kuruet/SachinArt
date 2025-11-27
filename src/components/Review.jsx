@@ -1,4 +1,25 @@
 import { useState, useEffect } from 'react';
+import m1 from '../assets/m1.avif';
+import m2 from '../assets/m2.avif';
+import m3 from '../assets/m3.avif';
+import m4 from '../assets/m4.avif';
+import m5 from '../assets/m5.avif';
+import m6 from '../assets/m6.avif';
+import m7 from '../assets/m7.avif';
+import m8 from '../assets/m8.avif';
+import m9 from '../assets/m9.avif';
+import m10 from '../assets/m10.avif';
+import f1 from '../assets/f1.avif';
+import f2 from '../assets/f2.avif';
+import f3 from '../assets/hero.jpg';
+import f4 from '../clients/img42.jpg';
+import f5 from '../clients/img43.jpg';
+import f6 from '../clients/img44.jpg';
+import f7 from '../clients/img45.jpg';
+import f8 from '../clients/img46.jpg';
+import f9 from '../clients/img49.jpg';
+import f10 from '../clients/img48.jpg';
+
 
 /**
  * Testimonial Component - Client Reviews Section
@@ -25,165 +46,167 @@ import { useState, useEffect } from 'react';
 const testimonialsData = [
   {
     id: 1,
-    name: "Sarah Mitchell",
+    name: "Aarav Sharma",
     role: "Wedding Client",
-    avatar: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=800&q=80",
-    text: "Working with this team was an absolute dream! From the initial consultation to receiving our final photos, every step was professional and enjoyable. The photos captured our special day perfectly, and we couldn't be happier with the results. Highly recommend!",
+    avatar: m1,
+    text: "Sachin’s live caricature booth at our wedding was a massive hit! Guests kept lining up because his sketches were fast and hilarious. Truly unique entertainment!",
     sourceUrl: "#"
   },
   {
     id: 2,
-    name: "Michael Chen",
-    role: "Corporate Client",
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&q=80",
-    text: "The session was incredibly smooth and professional. They made me feel comfortable in front of the camera, which resulted in stunning headshots for my business. The turnaround time was quick, and the quality exceeded my expectations.",
+    name: "Neha Patil",
+    role: "Engagement Client",
+    avatar: f1,
+    text: "We booked Sachin for our engagement and everyone loved getting sketched live. His friendly nature made guests feel super comfortable. Highly recommended!",
     sourceUrl: "#"
   },
   {
     id: 3,
-    name: "Emily Rodriguez",
-    role: "Family Portrait",
-    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=800&q=80",
-    text: "Our family portraits turned out beautifully! The photographer was patient with our kids and captured genuine moments of joy. We now have memories to treasure forever. The experience was wonderful from start to finish.",
+    name: "Rohit Deshmukh",
+    role: "Corporate Event",
+    avatar: m2,
+    text: "Sachin was the showstopper at our corporate annual day. Employees were amazed by how accurately he captured expressions in just a few minutes!",
     sourceUrl: "#"
   },
   {
     id: 4,
-    name: "James Anderson",
-    role: "Engagement Session",
-    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=800&q=80",
-    text: "My fiancée and I had an amazing engagement photo session. The locations chosen were perfect, and the photos are absolutely stunning. We received so many compliments! Can't wait to work with them again for our wedding.",
+    name: "Shruti Iyer",
+    role: "Wedding Reception",
+    avatar: f2,
+    text: "We had Sachin at our reception, and our guests still talk about their caricatures! Such a refreshing and memorable wedding experience.",
     sourceUrl: "#"
   },
   {
     id: 5,
-    name: "Olivia Thompson",
-    role: "Maternity Photos",
-    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&q=80",
-    text: "The maternity session was such a special experience. They made me feel beautiful and confident during a time when I didn't always feel my best. The photos are artistic, intimate, and exactly what I hoped for. Thank you for capturing this precious moment!",
+    name: "Aman Verma",
+    role: "Corporate Diwali Event",
+    avatar: m3,
+    text: "Our Diwali office event became 10x more fun thanks to Sachin. Everyone took home a caricature as a souvenir. Amazing talent!",
     sourceUrl: "#"
   },
   {
     id: 6,
-    name: "David Park",
-    role: "Business Branding",
-    avatar: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=800&q=80",
-    text: "We hired them for our company's rebranding campaign, and the results were outstanding. Professional, creative, and delivered exactly what we needed. The photos elevated our brand image significantly.",
+    name: "Pooja Jadhav",
+    role: "Mehendi Ceremony",
+    avatar: f3,
+    text: "Sachin added so much charm to our mehendi. His sketches were adorable and captured the vibe perfectly. Totally worth it!",
     sourceUrl: "#"
   },
   {
     id: 7,
-    name: "Jessica Williams",
-    role: "Senior Portraits",
-    avatar: "https://images.unsplash.com/photo-1488426862026-3ee34a7d66df?w=800&q=80",
-    text: "My senior portraits are everything I dreamed of! The photographer understood my vision perfectly and helped me feel confident throughout the shoot. I'll cherish these photos forever as I head off to college.",
+    name: "Harshit Kapoor",
+    role: "Corporate Client",
+    avatar: m4,
+    text: "We invited Sachin for our product launch event and guests absolutely loved his work. It created a fun and engaging atmosphere!",
     sourceUrl: "#"
   },
   {
     id: 8,
-    name: "Robert Johnson",
-    role: "Real Estate",
-    avatar: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=800&q=80",
-    text: "As a real estate agent, quality photography is crucial. These professionals deliver consistently excellent property photos that help my listings stand out. Their attention to lighting and composition is unmatched.",
+    name: "Ishita Nair",
+    role: "Wedding Guest Experience",
+    avatar: f4,
+    text: "Sachin gave our wedding a luxurious and personal touch. Every guest took home a special memory. His detailing is just amazing.",
     sourceUrl: "#"
   },
   {
     id: 9,
-    name: "Amanda Davis",
-    role: "Fashion Editorial",
-    avatar: "https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?w=800&q=80",
-    text: "The fashion shoot was incredible! Creative direction, perfect lighting, and stunning final images. Working with this team felt like collaborating with true artists. The photos exceeded all my expectations and are now featured in my portfolio.",
+    name: "Siddharth Rao",
+    role: "Sangeet Night",
+    avatar: m5,
+    text: "The caricature station became the highlight of our sangeet! Sachin’s talent and energy kept everyone entertained.",
     sourceUrl: "#"
   },
   {
     id: 10,
-    name: "Christopher Lee",
-    role: "Graduation Photos",
-    avatar: "https://images.unsplash.com/photo-1463453091185-61582044d556?w=800&q=80",
-    text: "They captured my graduation perfectly! The mix of formal and candid shots tells the complete story of this milestone. My family loves the photos, and I'm so grateful to have these memories professionally documented.",
+    name: "Ananya Banerjee",
+    role: "Wedding Client",
+    avatar: f5,
+    text: "I am so happy we booked Sachin! His live sketches captured emotions beautifully. Guests still have them framed at home.",
     sourceUrl: "#"
   },
   {
     id: 11,
-    name: "Sophia Martinez",
-    role: "Newborn Session",
-    avatar: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=800&q=80",
-    text: "Our newborn session was magical. The photographer was gentle, patient, and so talented at capturing our baby's tiny features. We received the most adorable photos that we'll treasure for a lifetime. Highly recommend for new parents!",
+    name: "Kunal Singh",
+    role: "Corporate Gala",
+    avatar: m6,
+    text: "For our annual gala, Sachin delivered superb value. People formed long queues just to get sketched. Outstanding experience!",
     sourceUrl: "#"
   },
   {
     id: 12,
-    name: "Daniel Brown",
-    role: "Sports Photography",
-    avatar: "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?w=800&q=80",
-    text: "The action shots from our tournament are phenomenal! They captured the intensity and emotion of the game perfectly. Fast turnaround and professional service throughout. Will definitely book again for future events.",
+    name: "Riya Menon",
+    role: "Haldi Ceremony",
+    avatar: f6,
+    text: "Sachin brought so much joy to our haldi function. His caricatures were funny yet elegant. Our relatives enjoyed every bit.",
     sourceUrl: "#"
   },
   {
     id: 13,
-    name: "Isabella Garcia",
-    role: "Quinceañera",
-    avatar: "https://images.unsplash.com/photo-1517841905240-472988babdf9?w=800&q=80",
-    text: "My quinceañera photos are absolutely breathtaking! Every special moment was captured beautifully. The team was professional, fun to work with, and made me feel like a princess. Thank you for documenting my special day so perfectly!",
+    name: "Vikram Chavan",
+    role: "Corporate Expo",
+    avatar: m7,
+    text: "We used Sachin’s caricature art at our expo stall and it attracted massive footfall. Brilliant marketing tool!",
     sourceUrl: "#"
   },
   {
     id: 14,
-    name: "Matthew Wilson",
-    role: "Product Photography",
-    avatar: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?w=800&q=80",
-    text: "Our e-commerce store needed high-quality product photos, and they delivered beyond expectations. Clean, professional shots that showcase our products perfectly. Sales have increased since updating our images!",
+    name: "Smita Gokhale",
+    role: "Wedding Anniversary",
+    avatar: f7,
+    text: "We invited Sachin for our 10th anniversary celebration. His personality and art made the evening unforgettable.",
     sourceUrl: "#"
   },
   {
     id: 15,
-    name: "Victoria Taylor",
-    role: "Bridal Portraits",
-    avatar: "https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?w=800&q=80",
-    text: "My bridal portrait session was an unforgettable experience. I felt like a model for a day! The photographer's guidance and creativity resulted in stunning images that I'll display proudly in my home. Worth every penny!",
+    name: "Arjun Khanna",
+    role: "Corporate Leadership Meet",
+    avatar: m8,
+    text: "Sachin sketched our leadership team and the results were fantastic! Everyone appreciated the fun touch to the event.",
     sourceUrl: "#"
   },
   {
     id: 16,
-    name: "Alexander Moore",
-    role: "Restaurant Client",
-    avatar: "https://images.unsplash.com/photo-1504257432389-52343af06ae3?w=800&q=80",
-    text: "The food photography for our restaurant menu is outstanding. They made our dishes look irresistible! Professional setup, perfect lighting, and artistic composition. Our customers often mention how appetizing the photos look.",
+    name: "Tanvi Raut",
+    role: "Engagement Client",
+    avatar: f8,
+    text: "His caricatures added charm and uniqueness to our engagement. A very gifted artist with a warm personality!",
     sourceUrl: "#"
   },
   {
     id: 17,
-    name: "Grace Anderson",
-    role: "Birthday Session",
-    avatar: "https://images.unsplash.com/photo-1522556189639-b150ed9c4330?w=800&q=80",
-    text: "The birthday party photos are wonderful! They captured all the joy, laughter, and special moments. Even managed to get great shots of the kids actually sitting still and smiling. We're so happy with the results!",
+    name: "Dev Patel",
+    role: "Corporate Annual Meet",
+    avatar: m9,
+    text: "Sachin’s live sketches kept the crowd engaged throughout. Perfect addition to any corporate event.",
     sourceUrl: "#"
   },
   {
     id: 18,
-    name: "Benjamin Harris",
-    role: "Architecture Photos",
-    avatar: "https://images.unsplash.com/photo-1513956589380-bad6acb9b9d4?w=800&q=80",
-    text: "As an architect, I needed professional photos of my completed projects. The attention to detail, understanding of lighting, and architectural knowledge resulted in portfolio-quality images. Exceptional work!",
+    name: "Madhuri Shetty",
+    role: "Wedding Guest",
+    avatar: f9,
+    text: "I attended a wedding where Sachin was performing live, and I loved the sketch he made of me! Such a beautiful keepsake.",
     sourceUrl: "#"
   },
   {
     id: 19,
-    name: "Natalie White",
-    role: "Anniversary Photos",
-    avatar: "https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=800&q=80",
-    text: "Our 25th anniversary photos are beautiful and timeless. The session felt relaxed and fun, and the photographer captured our love perfectly. These photos will be cherished by our family for generations to come.",
+    name: "Jatin Malhotra",
+    role: "Corporate Conference",
+    avatar: m10,
+    text: "Sachin’s caricatures added a refreshing break during our conference. Everyone enjoyed the personalized art pieces.",
     sourceUrl: "#"
   },
   {
     id: 20,
-    name: "Ryan Clark",
-    role: "Pet Photography",
-    avatar: "https://images.unsplash.com/photo-1521119989659-a83eee488004?w=800&q=80",
-    text: "Getting professional photos of our dog was the best decision! The photographer was patient and knew exactly how to capture our pup's personality. The photos are frame-worthy and bring us joy every time we look at them. Thank you!",
+    name: "Sneha Kapoor",
+    role: "Wedding Client",
+    avatar: f10,
+    text: "Booking Sachin was the best decision! Guests were thrilled to take home their caricature sketches. Incredible experience!",
     sourceUrl: "#"
   }
 ];
+
+
 
 const Testimonial = ({ testimonials = testimonialsData }) => {
   const [expandedCards, setExpandedCards] = useState({});
@@ -298,7 +321,7 @@ const Testimonial = ({ testimonials = testimonialsData }) => {
               className="morion-text text-lg md:text-xl mb-2"
               style={{ color: 'var(--dark-grey)' }}
             >
-              Hear from our happy clients
+              Hear from my happy clients
             </p>
             <p
               className="morion-text text-sm"

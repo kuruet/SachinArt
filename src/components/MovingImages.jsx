@@ -1,10 +1,10 @@
-import { useState, useEffect } from 'react';
-import img1 from '../clients/img1.jpg';
-import img2 from '../clients/img2.jpg';
-import img3 from '../clients/img3.jpg';
-import img4 from '../clients/img4.jpg';
-import img5 from '../clients/img5.jpg';
-import img6 from '../clients/img6.jpg';
+import React from 'react';
+import img1 from '../assets/hero1.jpg';
+import img2 from '../assets/hero2.jpg';
+import img3 from '../assets/Sclient3.jpg';
+import img4 from '../assets/Sclient6.jpg';
+import img5 from '../assets/Sclient9.jpg';
+import img6 from '../assets/Sclient12.jpg';
 import img7 from '../clients/img7.jpg';
 import img8 from '../clients/img8.jpg';
 import img9 from '../clients/img9.jpg';
@@ -15,12 +15,12 @@ import img13 from '../clients/img13.jpg';
 import img14 from '../clients/img14.jpg';
 import img15 from '../clients/img15.jpg';
 import img16 from '../clients/img16.jpg';
-import img17 from '../clients/img17.jpg';
-import img18 from '../clients/img18.jpg';
-import img19 from '../clients/img19.jpg';
-import img20 from '../clients/img20.jpg';
-import img21 from '../clients/img21.jpg';
-import img22 from '../clients/img22.jpg';
+import img17 from '../assets/hero3.jpg';
+import img18 from '../assets/sachinClient1.jpg';
+import img19 from '../assets/Sclient4.jpg';
+import img20 from '../assets/Sclient7.jpg';
+import img21 from '../assets/Sclient10.jpg';
+import img22 from '../assets/Sclient13.jpg';
 import img23 from '../clients/img23.jpg';
 import img24 from '../clients/img24.jpg';
 import img25 from '../clients/img25.jpg';
@@ -32,11 +32,11 @@ import img30 from '../clients/img30.jpg';
 import img31 from '../clients/img31.jpg';
 import img32 from '../clients/img32.jpg';
 import img33 from '../clients/img33.jpg';
-import img34 from '../clients/img34.jpg';
-import img35 from '../clients/img35.jpg';
-import img36 from '../clients/img36.jpg';
-import img37 from '../clients/img37.jpg';
-import img38 from '../clients/img38.jpg';
+import img34 from '../assets/hero4.jpg';
+import img35 from '../assets/Sclient2.jpg';
+import img36 from '../assets/Sclient5.jpg';
+import img37 from '../assets/Sclient8.jpg';
+import img38 from '../assets/Sclient11.jpg';
 import img39 from '../clients/img39.jpg';
 import img40 from '../clients/img40.jpg';
 import img41 from '../clients/img41.jpg';
@@ -50,292 +50,82 @@ import img48 from '../clients/img48.jpg';
 import img49 from '../clients/img49.jpg';
 import img50 from '../clients/img50.jpg';
 
-
-/**
- * Portfolio Component - Infinite Scrolling Image Gallery
- * 
- * Features:
- * - 3-column responsive grid (3 cols on lg, 2 on md, 1 on sm)
- * - Infinite vertical scroll animation
- * - Hover effects with caption overlay
- * - Parallax effect with different speeds per column
- * - Seamless looping
- */
-
-const Portfolio = ({ images }) => {
-  const [isHovered, setIsHovered] = useState(null);
-
-  // Default images from Unsplash if none provided
-  const defaultImages = [
-    { src: img1, alt: "", title: "", },
-    { src: img2, alt: "", title: "", },
-    { src: img3, alt: "", title: "", },
-    { src: img4, alt: "", title: "", },
-    { src: img5, alt: "", title: "", },
-    { src: img6, alt: "", title: "", },
-    { src: img7, alt: "", title: "", },
-    { src: img8, alt: "", title: "", },
-    { src: img9, alt: "", title: "", },
-    { src: img10, alt: "", title: "", },
-    { src: img11, alt: "", title: "", },
-    { src: img12, alt: "", title: "", },
-    { src: img13, alt: "", title: "", },
-    { src: img14, alt: "", title: "", },
-    { src: img15, alt: "", title: "", },
-    { src: img16, alt: "", title: "", },
-    { src: img17, alt: "", title: "", },
-    { src: img18, alt: "", title: "", },
-    { src: img19, alt: "", title: "", },
-    { src: img20, alt: "", title: "", },
-    { src: img21, alt: "", title: "", },
-    { src: img22, alt: "", title: "", },
-    { src: img23, alt: "", title: "", },
-    { src: img24, alt: "", title: "", },
-    { src: img25, alt: "", title: "", },
-    { src: img26, alt: "", title: "", },
-    { src: img27, alt: "", title: "", },
-    { src: img28, alt: "", title: "", },  
-    { src: img29, alt: "", title: "", },
-    { src: img30, alt: "", title: "", },
-    { src: img31, alt: "", title: "", },
-    { src: img32, alt: "", title: "", },
-    { src: img33, alt: "", title: "", },
-    { src: img34, alt: "", title: "", },
-    { src: img35, alt: "", title: "", },
-    { src: img36, alt: "", title: "", },
-    { src: img37, alt: "", title: "", },
-    { src: img38, alt: "", title: "", },
-    { src: img39, alt: "", title: "", },
-    { src: img40, alt: "", title: "", },
-    { src: img41, alt: "", title: "", },
-    { src: img42, alt: "", title: "", },
-    { src: img43, alt: "", title: "", },
-    { src: img44, alt: "", title: "", },
-    { src: img45, alt: "", title: "", },
-    { src: img46, alt: "", title: "", },
-    { src: img47, alt: "", title: "", },
-    { src: img48, alt: "", title: "", },
-    { src: img49, alt: "", title: "", },
-    { src: img50, alt: "", title: "", },
-   
+const MovingImages = () => {
+  const images = [
+    { src: img1, alt: "Artwork 1", title: "Client Artwork 1" },
+    { src: img2, alt: "Artwork 2", title: "Client Artwork 2" },
+    { src: img3, alt: "Artwork 3", title: "Client Artwork 3" },
+    { src: img4, alt: "Artwork 4", title: "Client Artwork 4" },
+    { src: img5, alt: "Artwork 5", title: "Client Artwork 5" },
+    { src: img6, alt: "Artwork 6", title: "Client Artwork 6" },
+    { src: img7, alt: "Artwork 7", title: "Client Artwork 7" },
+    { src: img8, alt: "Artwork 8", title: "Client Artwork 8" },
+    { src: img9, alt: "Artwork 9", title: "Client Artwork 9" },
+    { src: img10, alt: "Artwork 10", title: "Client Artwork 10" },
+    { src: img11, alt: "Artwork 11", title: "Client Artwork 11" },
+    { src: img12, alt: "Artwork 12", title: "Client Artwork 12" },
+    { src: img13, alt: "Artwork 13", title: "Client Artwork 13" },
+    { src: img14, alt: "Artwork 14", title: "Client Artwork 14" },
+    { src: img15, alt: "Artwork 15", title: "Client Artwork 15" },
+    { src: img16, alt: "Artwork 16", title: "Client Artwork 16" },
+    { src: img17, alt: "Artwork 17", title: "Client Artwork 17" },
+    { src: img18, alt: "Artwork 18", title: "Client Artwork 18" },
+    { src: img19, alt: "Artwork 19", title: "Client Artwork 19" },
+    { src: img20, alt: "Artwork 20", title: "Client Artwork 20" },
+    { src: img21, alt: "Artwork 21", title: "Client Artwork 21" },
+    { src: img22, alt: "Artwork 22", title: "Client Artwork 22" },
+    { src: img23, alt: "Artwork 23", title: "Client Artwork 23" },
+    { src: img24, alt: "Artwork 24", title: "Client Artwork 24" },
+    { src: img25, alt: "Artwork 25", title: "Client Artwork 25" },
+    { src: img26, alt: "Artwork 26", title: "Client Artwork 26" },
+    { src: img27, alt: "Artwork 27", title: "Client Artwork 27" },
+    { src: img28, alt: "Artwork 28", title: "Client Artwork 28" },
+    { src: img29, alt: "Artwork 29", title: "Client Artwork 29" },
+    { src: img30, alt: "Artwork 30", title: "Client Artwork 30" },
+    { src: img31, alt: "Artwork 31", title: "Client Artwork 31" },
+    { src: img32, alt: "Artwork 32", title: "Client Artwork 32" },
+    { src: img33, alt: "Artwork 33", title: "Client Artwork 33" },
+    { src: img34, alt: "Artwork 34", title: "Client Artwork 34" },
+    { src: img35, alt: "Artwork 35", title: "Client Artwork 35" },
+    { src: img36, alt: "Artwork 36", title: "Client Artwork 36" },
+    { src: img37, alt: "Artwork 37", title: "Client Artwork 37" },
+    { src: img38, alt: "Artwork 38", title: "Client Artwork 38" },
+    { src: img39, alt: "Artwork 39", title: "Client Artwork 39" },
+    { src: img40, alt: "Artwork 40", title: "Client Artwork 40" },
+    { src: img41, alt: "Artwork 41", title: "Client Artwork 41" },
+    { src: img42, alt: "Artwork 42", title: "Client Artwork 42" },
+    { src: img43, alt: "Artwork 43", title: "Client Artwork 43" },
+    { src: img44, alt: "Artwork 44", title: "Client Artwork 44" },
+    { src: img45, alt: "Artwork 45", title: "Client Artwork 45" },
+    { src: img46, alt: "Artwork 46", title: "Client Artwork 46" },
+    { src: img47, alt: "Artwork 47", title: "Client Artwork 47" },
+    { src: img48, alt: "Artwork 48", title: "Client Artwork 48" },
+    { src: img49, alt: "Artwork 49", title: "Client Artwork 49" },
+    { src: img50, alt: "Artwork 50", title: "Client Artwork 50" }
+    
   ];
 
-  const portfolioImages = images || defaultImages;
-
-  // Split images into 3 columns for different scroll speeds
-  const getColumnImages = (columnIndex) => {
-    return portfolioImages.filter((_, index) => index % 3 === columnIndex);
-  };
-
-  const column1Images = getColumnImages(0);
-  const column2Images = getColumnImages(1);
-  const column3Images = getColumnImages(2);
-
   return (
-    <>
-      <style>{`
-        @keyframes scroll-slow {
-          0% {
-            transform: translateY(0);
-          }
-          100% {
-            transform: translateY(-50%);
-          }
-        }
-
-        @keyframes scroll-medium {
-          0% {
-            transform: translateY(0);
-          }
-          100% {
-            transform: translateY(-50%);
-          }
-        }
-
-        @keyframes scroll-fast {
-          0% {
-            transform: translateY(0);
-          }
-          100% {
-            transform: translateY(-50%);
-          }
-        }
-
-        .scroll-column-1 {
-          animation: scroll-slow 40s linear infinite;
-        }
-
-        .scroll-column-2 {
-          animation: scroll-medium 35s linear infinite;
-        }
-
-        .scroll-column-3 {
-          animation: scroll-fast 30s linear infinite;
-        }
-
-        .scroll-column-1:hover,
-        .scroll-column-2:hover,
-        .scroll-column-3:hover {
-          animation-play-state: paused;
-        }
-
-        .image-overlay {
-          opacity: 0;
-          transition: opacity 0.3s ease-in-out;
-        }
-
-        .image-container:hover .image-overlay {
-          opacity: 1;
-        }
-
-        .tilt-glare {
-          position: absolute;
-          top: 0;
-          left: 0;
-          width: 100%;
-          height: 100%;
-          background: linear-gradient(135deg, rgba(255,255,255,0) 0%, rgba(255,255,255,0.1) 50%, rgba(255,255,255,0) 100%);
-          opacity: 0;
-          transition: opacity 0.3s ease;
-          pointer-events: none;
-        }
-
-        .image-container:hover .tilt-glare {
-          opacity: 1;
-        }
-      `}</style>
-
-      <div className="w-full min-h-screen bg-[#fff5df] from-gray-900 via-gray-800 to-black overflow-hidden ">
-        <div className="max-w-7xl mx-auto">
-          {/* Header */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">
-              
-            </h1>
-            <p className="text-gray-400 text-lg">
-             
-            </p>
-          </div>
-
-          {/* Grid Container */}
-          <div className="  grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 overflow-hidden">
-            {/* Column 1 */}
-            <div className="relative overflow-hidden">
-              <div className="scroll-column-1 space-y-6">
-                {/* Double the images for seamless loop */}
-                {[...column1Images, ...column1Images].map((image, index) => (
-                  <a
-                    key={`col1-${index}`}
-                    href={image.link}
-                    className="image-container block relative group overflow-hidden rounded-lg shadow-2xl"
-                    onMouseEnter={() => setIsHovered(null)}
-                    onMouseLeave={() => setIsHovered(null)}
-                  >
-                    <img
-                      src={image.src}
-                      alt={image.alt}
-                      className="w-full h-auto object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-                      loading="lazy"
-                    />
-                    
-                    {/* Overlay */}
-                    <div className="image-overlay absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end p-6">
-                      <div className="text-white">
-                        <h3 className="text-xl md:text-2xl font-bold mb-2">
-                          {image.title}
-                        </h3>
-                        <p className="text-sm text-gray-300">
-                          {image.alt}
-                        </p>
-                      </div>
-                    </div>
-
-                    {/* Glare Effect */}
-                    <div className="tilt-glare"></div>
-                  </a>
-                ))}
+    <div className="w-full py-10 bg-{#fff5df}">
+      <div className="w-full mx-auto px-4">
+        <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-4">
+          {images.map((image, index) => (
+            <div key={index} className="break-inside-avoid mb-4 p-4 lg:p-6 md:p-4 sm:p-3">
+              <div className="overflow-hidden rounded-lg hover:scale-105 transition-all duration-300 ease-in-out cursor-pointer">
+                <img
+                  src={image.src}
+                  alt={image.alt}
+                  title={image.title}
+                  className="w-full object-cover"
+                  loading="lazy"
+                />
               </div>
             </div>
-
-            {/* Column 2 */}
-            <div className="relative overflow-hidden hidden md:block">
-              <div className="scroll-column-2 space-y-6">
-                {[...column2Images, ...column2Images].map((image, index) => (
-                  <a
-                    key={`col2-${index}`}
-                    href={image.link}
-                    className="image-container block relative group overflow-hidden rounded-lg shadow-2xl"
-                    onMouseEnter={() => setIsHovered(null)}
-                    onMouseLeave={() => setIsHovered(null)}
-                  >
-                    <img
-                      src={image.src}
-                      alt={image.alt}
-                      className="w-full h-auto object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-                      loading="lazy"
-                    />
-                    
-                    <div className="image-overlay absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end p-6">
-                      <div className="text-white">
-                        <h3 className="text-xl md:text-2xl font-bold mb-2">
-                          {image.title}
-                        </h3>
-                        <p className="text-sm text-gray-300">
-                          {image.alt}
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="tilt-glare"></div>
-                  </a>
-                ))}
-              </div>
-            </div>
-
-            {/* Column 3 */}
-            <div className="relative overflow-hidden hidden lg:block">
-              <div className="scroll-column-3 space-y-6">
-                {[...column3Images, ...column3Images].map((image, index) => (
-                  <a
-                    key={`col3-${index}`}
-                    href={image.link}
-                    className="image-container block relative group overflow-hidden rounded-lg shadow-2xl"
-                    onMouseEnter={() => setIsHovered(null)}
-                    onMouseLeave={() => setIsHovered(null)}
-                  >
-                    <img
-                      src={image.src}
-                      alt={image.alt}
-                      className="w-full h-auto object-cover transition-transform duration-500 ease-out group-hover:scale-105"
-                      loading="lazy"
-                    />
-                    
-                    <div className="image-overlay absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end p-6">
-                      <div className="text-white">
-                        <h3 className="text-xl md:text-2xl font-bold mb-2">
-                          {image.title}
-                        </h3>
-                        <p className="text-sm text-gray-300">
-                          {image.alt}
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="tilt-glare"></div>
-                  </a>
-                ))}
-              </div>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
-// Usage Example Component
-const App = () => {
-  return <Portfolio />;
-};
-
-export default App;
+export default MovingImages; 

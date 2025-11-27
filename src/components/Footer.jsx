@@ -26,9 +26,8 @@ const Footer = () => {
 
   // Social media links - customize these
   const socialLinks = [
-    { name: 'Instagram', url: 'https://www.instagram.com/creativecaricatureclub/', icon: 'instagram' },
-    { name: 'youtube', url: 'https://www.youtube.com/@creativecaricatureclub', icon: 'youtube' },
-    // { name: 'Dribbble', url: '', icon: 'dribbble' },
+    { name: 'Instagram', url: 'https://www.instagram.com/sachinbagul_artt/', icon: 'instagram' },
+     // { name: 'Dribbble', url: '', icon: 'dribbble' },
     // { name: 'LinkedIn', url: '', icon: 'linkedin' }
   ];
 
@@ -37,7 +36,7 @@ const Footer = () => {
     column1: [
       { text: 'Home', url: '/', current: true },
       { text: 'WORK', url: '/portfolio', current: false },
-      { text: 'Portfolio', url: '/illustrations', current: false }
+      { text: 'Portfolio', url: '/portfolio', current: false }
     ],
     column2: [
       { text: 'ABOUT', url: '/about', current: false },
@@ -289,7 +288,7 @@ const Footer = () => {
               opacity: '0.9'
             }}
           >
-            ©2025 creativecaricatureclub. All Rights Reserved
+            ©2025 Sachin Bagul Art. All Rights Reserved
           </p>
           <h3 className="morion-text text-sm text-center mt-4">
             <a 
@@ -300,7 +299,12 @@ const Footer = () => {
                 textDecoration: 'none'
               }}
             > 
-              Developed by <span className="text-[#8a733e]">PRATIK</span>
+              Developed by <span className="text-[#8a733e]">
+                <a href="https://kuruet.github.io/Pratik./" target="_blank" rel="noopener noreferrer">
+                 PRATIK
+                </a>
+                
+                </span>
             </a>
           </h3>
         </div>

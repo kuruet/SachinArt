@@ -1,12 +1,17 @@
 import { useState, useEffect, useRef } from 'react';
-import project1 from '../assets/project1.jpg';
-import project2 from '../assets/project2.jpg';
-import project3 from '../assets/project3.jpg';  
-import project4 from '../assets/project4.jpg';
-import project5 from '../assets/project5.jpg';
-import project6 from '../assets/project6.jpg';
-import project7 from '../assets/project7.jpg';
-import project8 from '../assets/project8.jpg';
+import project1 from '../assets/Sclient3.jpg';
+import project2 from '../assets/hero2.jpg';
+import project3 from '../assets/hero3.jpg';
+import project4 from '../assets/Sclient2.jpg';
+ import project5 from '../assets/hero4.jpg';
+import project6 from '../assets/sachinClient1.jpg';
+import project7 from '../assets/client6.jpg';
+import project8 from '../assets/client7.jpg';
+import client9 from '../assets/client8.jpg';
+import client10 from '../assets/client9.jpg';
+import client11 from '../assets/client10.jpg';
+import client12 from '../assets/client11.jpg';
+ 
 
 /**
  * Work Component - Premium Projects Gallery

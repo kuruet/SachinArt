@@ -26,8 +26,8 @@ import { useState, useEffect, useRef } from 'react';
 // Default testimonial data
 const defaultData = {
   eyebrow: "KIND WORDS",
-  quote: "“Our guests still talk about how effortlessly fun CreativeCaricatureClub made our wedding reception! The artist arrived early, mingled with everyone, and created caricatures on-the-spot that captured personalities so cleverly. Even my grandma — who is usually camera-shy — jumped right in with a giant grin. We now have these amazing keepsakes for our photo-album, and I couldn’t recommend them more",
-// — Laura & James Collins, Bride & Groom, July 2025",
+  quote: "Our guests still can’t stop talking about Sachin  and the magic he brought to our wedding! He arrived early, blended in so naturally with everyone, and sketched live caricatures that captured each person’s personality with incredible charm. Even my uncle — who never poses for photos — sat down laughing as Sachin drew him with such ease and creativity",
+ // — Laura & James Collins, Bride & Groom, July 2025",
   author: " Bride & Groom, July 2025",
   ctaText: "READ MORE",
   ctaHref: "/testimonials"

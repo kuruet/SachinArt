@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import logo from '../assets/loggo.png';
+import logo from '../assets/SB_logo.png';
 
 const Header = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -187,18 +187,22 @@ const Header = () => {
             </div>
 
             {/* Logo - Center */}
-            <a
-              href="/"
-              aria-label="Home"
-              className="text-2xl font-bold flex-shrink-0"
-              style={{ color: 'var(--gold)' }}
-            >
-              <img 
-                src={logo} 
-                alt="Logo" 
-                className="h-8 sm:h-10 md:h-12 lg:h-14 xl:h-16 object-contain" 
-              />
-            </a>
+{/* 
+ <a
+  href="/"
+  aria-label="Home"
+  className="text-4xl font-bold flex-shrink-0 tracking-wide font-[cursive]"
+  style={{ color: 'var(--gold)' }}
+>
+  Sachin Bagul Art
+</a> */}
+
+
+
+           <a href="/" aria-label="Home" 
+           className="text-6xl font-bold flex-shrink-0" style={{ color: 'var(--gold)' }} > 
+           <img src={logo} alt="Logo"
+            className="h-10 sm:h-16 md:h-20 lg:h-34 xl:h-20 object-contain" /> </a>
 
             {/* Right Navigation - Desktop */}
             <div className="hidden lg:flex items-center space-x-3 xl:space-x-6">

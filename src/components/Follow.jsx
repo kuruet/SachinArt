@@ -10,8 +10,8 @@ import React from 'react';
  */
 
 const Follow = ({ 
-  username = '@creativecaricatureclub',
-  href = 'https://www.instagram.com/creativecaricatureclub/',
+  username = '@sachinbagulart',
+  href = 'https://www.instagram.com/sachinbagul_artt/',
   className = '',
   openInNewTab = true,
   ariaLabel
@@ -39,7 +39,7 @@ const Follow = ({
     }
 
     const linkProps = {
-      className: "morion-text text-sm md:text-base font-semibold tracking-wider uppercase transition-all duration-300 hover:underline focus:outline-none focus:ring-2 focus:ring-offset-2 inline-block",
+      className: "morion-text text-sm md:text-base font-semibold tracking-wider uppercase transition-all duration-300  focus:outline-none focus:ring-2 focus:ring-offset-2 inline-block",
       href,
       style: {
         color: '#8a733e',
@@ -97,7 +97,7 @@ const Follow = ({
               color: '#8a733e'
             }}
           >
-            Follow Us on Instagram
+            Follow me on Instagram
           </h4>
 
           {/* Divider */}

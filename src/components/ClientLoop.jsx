@@ -1,18 +1,20 @@
 import { useState, useEffect, useRef } from 'react';
 
 // Import your images
-import client1 from '../assets/client1.jpg';
-import client2 from '../assets/client2.jpg';
-import client3 from '../assets/client3.jpg';
-import client4 from '../assets/client4.jpg';
-import client5 from '../assets/client5.jpg';
-import client6 from '../assets/client6.jpg';
-import client7 from '../assets/client7.jpg';
-import client8 from '../assets/client8.jpg';
-import client9 from '../assets/client9.jpg';
-import client10 from '../assets/client10.jpg';
-import client11 from '../assets/client11.jpg';
-import client12 from '../assets/client12.jpg';
+import client1 from '../assets/hero1.jpg';
+import client2 from '../assets/hero2.jpg';
+import client3 from '../assets/hero3.jpg';
+import client4 from '../assets/Sclient2.jpg';
+// import client5 from '../assets/client4.jpg';
+import client5 from '../assets/hero4.jpg';
+import client6 from '../assets/sachinClient1.jpg';
+import client7 from '../assets/client6.jpg';
+import client8 from '../assets/client7.jpg';
+import client9 from '../assets/client8.jpg';
+import client10 from '../assets/client9.jpg';
+import client11 from '../assets/client10.jpg';
+import client12 from '../assets/client11.jpg';
+// import client12 from '../assets/client12.jpg';
 
 /**
  * Work Component - Fixed Seamless Infinite Marquee
@@ -31,15 +33,17 @@ const Work = () => {
     { id: 1, title: ' ', slug: ' ', image: client1, category: '' },
     { id: 2, title: ' ', slug: ' ', image: client2, category: '' },
     { id: 3, title: ' ', slug: ' ', image: client3, category: '' },
-    { id: 4, title: '   ', slug: ' ', image: client4, category: '' },
-    { id: 5, title: '   ', slug: '  ', image: client5, category: '' },
-    { id: 6, title: '  ', slug: ' ', image: client6, category: ' ' },
-    { id: 7, title: ' ', slug: ' ', image: client7, category: '' },
+        { id: 4, title: ' ', slug: ' ', image: client4, category: '' },
+    { id: 5, title: '   ', slug: ' ', image: client5, category: '' },
+    // { id: 5, title: '   ', slug: '  ', image: client5, category: '' },
+        { id: 6, title: ' ', slug: ' ', image: client6, category: '' },
+    { id: 7, title: '  ', slug: ' ', image: client7, category: ' ' },
     { id: 8, title: ' ', slug: ' ', image: client8, category: '' },
     { id: 9, title: ' ', slug: ' ', image: client9, category: '' },
     { id: 10, title: ' ', slug: ' ', image: client10, category: '' },
     { id: 11, title: ' ', slug: ' ', image: client11, category: '' },
     { id: 12, title: ' ', slug: ' ', image: client12, category: '' },
+    // { id: 12, title: ' ', slug: ' ', image: client12, category: '' },
   ];
 
   // Calculate animation speeds
@@ -363,7 +367,7 @@ const Work = () => {
                 textDecoration: 'none'
               }}
             >
-              OUR HAPPY CLIENTS
+              MY HAPPY CLIENTS
             </h1>
           </div>
 
@@ -435,7 +439,7 @@ const Work = () => {
                         {item.title}
                       </h3>
                       <span className="learn-more text-white text-xs sm:text-sm uppercase tracking-widest font-medium">
-                        Learn More
+                        
                       </span>
                     </div>
                   </a>
